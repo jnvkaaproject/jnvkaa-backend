@@ -28,8 +28,6 @@ const validateRegister = (req, res, next) => {
 };
 
 const validateLogin = (req, res, next) => {
-
-  console.log(req.body);
   const schema = z
     .object({
       mobile: z

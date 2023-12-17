@@ -27,4 +27,18 @@ module.exports = function (app) {
     [authJwt.verifyToken],
     controller.getAlumniSearch
   );
+
+  app.get("/api/alumni/all", [authJwt.verifyToken], controller.getAlumnus);
+
+  app.get("/api/alumni/profile/last-4", controller.getAlumniProfileLastFour);
+  app.get(
+    "/api/alumni/my-profile",
+    [authJwt.verifyToken],
+    controller.getMyProfile
+  );
+  // app.post(
+  //   "/api/alumni/update-my-profile",
+  //   [authJwt.verifyToken],
+  //   controller.updateMyProfile
+  // );
 };
